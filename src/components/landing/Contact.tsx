@@ -17,19 +17,19 @@ export const Contact = () => (
             <div className="mt-8 space-y-4">
               <a href="https://wa.me/5493512153577" className="flex items-center gap-3 text-sm transition-smooth hover:text-primary">
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary"><MessageCircle className="h-5 w-5 text-primary" /></span>
-                +54 9 11 2854 1870
+                +54 9 351 215 3577
               </a>
               <div className="flex items-center gap-3 text-sm">
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary"><Phone className="h-5 w-5 text-primary" /></span>
-                11 2854 1870
+                351 215 3577
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary"><Mail className="h-5 w-5 text-primary" /></span>
-                contacto@ecutech.com.ar
+                contacto@soccatech.com.ar
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary"><MapPin className="h-5 w-5 text-primary" /></span>
-                Avellaneda, Buenos Aires
+                Córdoba, Chaco
               </div>
             </div>
           </div>
