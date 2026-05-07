@@ -15,7 +15,7 @@ export const Contact = () => (
             </p>
 
             <div className="mt-8 space-y-4">
-              <a href="https://wa.me/5491128541870" className="flex items-center gap-3 text-sm transition-smooth hover:text-primary">
+              <a href="https://wa.me/5493512153577" className="flex items-center gap-3 text-sm transition-smooth hover:text-primary">
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary"><MessageCircle className="h-5 w-5 text-primary" /></span>
                 +54 9 11 2854 1870
               </a>
@@ -40,7 +40,7 @@ export const Contact = () => (
               La forma más rápida de obtener un presupuesto. Mandanos foto del módulo y los datos del vehículo.
             </p>
             <Button variant="hero" size="lg" className="mt-6 w-full" asChild>
-              <a href="https://wa.me/5491128541870" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/5493512153577" target="_blank" rel="noreferrer">
                 <MessageCircle className="mr-1 h-5 w-5" />
                 Iniciar chat
               </a>
