@@ -19,7 +19,7 @@ export const Header = () => {
             <Cpu className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="text-lg font-bold">
-            Ecu<span className="text-gradient">Tech</span>
+            Socca<span className="text-gradient">Tech</span>
           </span>
         </a>
 
