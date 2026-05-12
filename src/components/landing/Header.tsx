@@ -24,7 +24,7 @@ export const Header = () => {
           </span>
         </a>
 
-        {/* Menú para Desktop */}
+        {/* Navegación Desktop */}
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <a 
@@ -43,13 +43,12 @@ export const Header = () => {
           </Button>
         </div>
 
-        {/* Botón de Menú Móvil */}
-        <button onClick={() => setOpen(!open)} className="md:hidden" aria-label="Menú">
+        <button onClick={() => setOpen(!open)} className="md:hidden">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Menú Móvil Abierto */}
+      {/* Menú Móvil */}
       {open && (
         <div className="border-t border-border bg-background md:hidden">
           <nav className="container flex flex-col gap-4 py-6">
