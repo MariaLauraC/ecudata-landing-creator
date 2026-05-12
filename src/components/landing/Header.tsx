@@ -2,84 +2,50 @@ import { Cpu, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-const links = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#marcas", label: "Marcas" },
-  { href: "#proceso", label: "Proceso" },
-  { href: "#contacto", label: "Contacto" },
-];
-
 export const Header = () => {
   const [open, setOpen] = useState(false);
 
-  // Función mágica para que baje sin recargar ni dar 404
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false); // Cierra el menú móvil si está abierto
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setOpen(false);
+    }
   };
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
       <div className="container flex h-16 items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-primary shadow-glow">
-            <Cpu className="h-5 w-5 text-primary-foreground" />
+        <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shadow-glow">
+            <Cpu className="h-5 w-5 text-white" />
           </div>
           <span className="text-lg font-bold">
-            Socca<span className="text-gradient">Tech</span>
+            Socca<span className="text-primary">Tech</span>
           </span>
-        </a>
+        </div>
 
-        {/* Navegación Desktop */}
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <a 
-              key={l.href} 
-              href={l.href} 
-              onClick={(e) => handleScroll(e, l.href)}
-              className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground cursor-pointer"
-            >
-              {l.label}
-            </a>
-          ))}
+          <button onClick={() => scrollToSection('servicios')} className="text-sm font-medium hover:text-primary">Servicios</button>
+          <button onClick={() => scrollToSection('marcas')} className="text-sm font-medium hover:text-primary">Marcas</button>
+          <button onClick={() => scrollToSection('proceso')} className="text-sm font-medium hover:text-primary">Proceso</button>
+          <button onClick={() => scrollToSection('contacto')} className="text-sm font-medium hover:text-primary">Contacto</button>
         </nav>
 
         <div className="hidden md:block">
-          <Button variant="hero" size="sm" asChild>
-            <a href="#contacto" onClick={(e) => handleScroll(e, "#contacto")}>
-              Consultar ahora
-            </a>
-          </Button>
+          <Button onClick={() => scrollToSection('contacto')}>Consultar ahora</Button>
         </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden">
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X /> : <Menu />}
         </button>
       </div>
 
-      {/* Menú Móvil */}
       {open && (
-        <div className="border-t border-border bg-background md:hidden">
-          <nav className="container flex flex-col gap-4 py-6">
-            {links.map((l) => (
-              <a 
-                key={l.href} 
-                href={l.href} 
-                onClick={(e) => handleScroll(e, l.href)} 
-                className="text-sm font-medium text-muted-foreground hover:text-foreground cursor-pointer"
-              >
-                {l.label}
-              </a>
-            ))}
-            <Button variant="hero" asChild>
-              <a href="#contacto" onClick={(e) => handleScroll(e, "#contacto")}>
-                Consultar ahora
-              </a>
-            </Button>
-          </nav>
+        <div className="p-4 bg-background border-b md:hidden flex flex-col gap-4">
+          <button onClick={() => scrollToSection('servicios')} className="text-left py-2">Servicios</button>
+          <button onClick={() => scrollToSection('marcas')} className="text-left py-2">Marcas</button>
+          <button onClick={() => scrollToSection('contacto')} className="text-left py-2">Contacto</button>
         </div>
       )}
     </header>
