@@ -11,7 +11,16 @@ const links = [
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
-  
+
+  // Función mágica para que baje sin recargar ni dar 404
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false); // Cierra el menú móvil si está abierto
+  };
+
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
       <div className="container flex h-16 items-center justify-between">
@@ -30,7 +39,8 @@ export const Header = () => {
             <a 
               key={l.href} 
               href={l.href} 
-              className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground"
+              onClick={(e) => handleScroll(e, l.href)}
+              className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground cursor-pointer"
             >
               {l.label}
             </a>
@@ -39,7 +49,9 @@ export const Header = () => {
 
         <div className="hidden md:block">
           <Button variant="hero" size="sm" asChild>
-            <a href="#contacto">Consultar ahora</a>
+            <a href="#contacto" onClick={(e) => handleScroll(e, "#contacto")}>
+              Consultar ahora
+            </a>
           </Button>
         </div>
 
@@ -56,14 +68,16 @@ export const Header = () => {
               <a 
                 key={l.href} 
                 href={l.href} 
-                onClick={() => setOpen(false)} 
-                className="text-sm font-medium text-muted-foreground hover:text-foreground"
+                onClick={(e) => handleScroll(e, l.href)} 
+                className="text-sm font-medium text-muted-foreground hover:text-foreground cursor-pointer"
               >
                 {l.label}
               </a>
             ))}
             <Button variant="hero" asChild>
-              <a href="#contacto">Consultar ahora</a>
+              <a href="#contacto" onClick={(e) => handleScroll(e, "#contacto")}>
+                Consultar ahora
+              </a>
             </Button>
           </nav>
         </div>
