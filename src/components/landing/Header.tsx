@@ -11,6 +11,7 @@ const links = [
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
+  
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
       <div className="container flex h-16 items-center justify-between">
@@ -23,9 +24,14 @@ export const Header = () => {
           </span>
         </a>
 
+        {/* Menú para Desktop */}
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground">
+            <a 
+              key={l.href} 
+              href={l.href} 
+              className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground"
+            >
               {l.label}
             </a>
           ))}
@@ -37,16 +43,23 @@ export const Header = () => {
           </Button>
         </div>
 
+        {/* Botón de Menú Móvil */}
         <button onClick={() => setOpen(!open)} className="md:hidden" aria-label="Menú">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
+      {/* Menú Móvil Abierto */}
       {open && (
         <div className="border-t border-border bg-background md:hidden">
           <nav className="container flex flex-col gap-4 py-6">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm font-medium text-muted-foreground hover:text-foreground">
+              <a 
+                key={l.href} 
+                href={l.href} 
+                onClick={() => setOpen(false)} 
+                className="text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
                 {l.label}
               </a>
             ))}
