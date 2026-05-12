@@ -7,24 +7,47 @@ const brands = [
 
 export const Brands = () => {
   return (
-    <section id="marcas" className="border-y border-border bg-card/50 py-20">
-      <div className="container">
-        <div className="mx-auto max-w-2xl text-center mb-12">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#f97316]">Compatibilidad total</p>
-          <h2 className="text-4xl font-bold sm:text-5xl">Trabajamos con todas las marcas</h2>
-          <p className="mt-4 text-muted-foreground">Reset de airbag y reparación de módulos disponibles para más de 25 marcas.</p>
+    <section id="marcas" style={{ backgroundColor: '#111', padding: '80px 0', borderTop: '1px solid #333', borderBottom: '1px solid #333' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', textAlign: 'center' }}>
+        
+        <div style={{ marginBottom: '50px' }}>
+          <p style={{ color: '#f97316', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '14px', marginBottom: '10px' }}>
+            Compatibilidad total
+          </p>
+          <h2 style={{ color: 'white', fontSize: '36px', fontWeight: 'bold', margin: '0 0 20px 0' }}>
+            Trabajamos con todas las marcas
+          </h2>
+          <p style={{ color: '#999', fontSize: '16px' }}>
+            Reset de airbag y reparación de módulos disponibles para más de 25 marcas.
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9">
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', 
+          gap: '15px',
+          justifyContent: 'center' 
+        }}>
           {brands.map((b) => (
             <div 
               key={b} 
-              className="flex h-12 items-center justify-center rounded-xl bg-[#f97316] text-black font-bold text-[10px] uppercase tracking-wider shadow-lg transform transition-transform hover:scale-105"
+              style={{ 
+                backgroundColor: '#f97316', 
+                color: 'black', 
+                fontWeight: 'bold', 
+                padding: '12px 5px', 
+                borderRadius: '12px', 
+                fontSize: '11px', 
+                textTransform: 'uppercase',
+                textAlign: 'center',
+                boxShadow: '0 4px 6px rgba(0,0,0,0.3)'
+              }}
             >
               {b}
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
