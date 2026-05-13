@@ -1,7 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-// Importamos el logo correctamente
 import logoImg from "../../assets/logo-soccatech.jpeg";
 
 export const Header = () => {
@@ -17,16 +16,16 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Contenedor del Logo */}
+      <div className="container flex h-20 items-center justify-between">
+        {/* Contenedor del Logo con más tamaño */}
         <div 
-          className="flex items-center cursor-pointer" 
+          className="flex items-center cursor-pointer py-2" 
           onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
         >
           <img 
             src={logoImg} 
             alt="SoccaTech" 
-            className="h-10 w-auto object-contain md:h-12"
+            className="h-16 w-auto object-contain md:h-20 scale-125" 
           />
         </div>
 
@@ -54,7 +53,6 @@ export const Header = () => {
         </button>
       </div>
 
-      {/* Menú Móvil */}
       {open && (
         <div className="p-4 bg-background border-b md:hidden flex flex-col gap-4">
           <button onClick={() => scrollToSection('servicios')} className="text-left py-2 border-b border-border/40 text-white">Servicios</button>
