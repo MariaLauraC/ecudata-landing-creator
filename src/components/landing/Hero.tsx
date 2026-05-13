@@ -29,13 +29,13 @@ export const Hero = () => (
 
         <div className="mt-8 flex flex-wrap gap-4">
           <Button variant="hero" size="lg" asChild>
-            <a href="#contact">
+            <a href="#contacto">
               Solicitar diagnóstico
               <ArrowRight className="ml-1 h-4 w-4" />
             </a>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <a href="#services">Ver servicios</a>
+            <a href="#servicios">Ver servicios</a>
           </Button>
         </div>
 
@@ -51,5 +51,7 @@ export const Hero = () => (
         </div>
       </div>
     </div>
+  </section>
+);
   </section>
 );
