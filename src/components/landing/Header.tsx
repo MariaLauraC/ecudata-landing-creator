@@ -26,18 +26,18 @@ export const Header = () => {
         </div>
 
         <nav className="hidden items-center gap-8 md:flex">
-          <button onClick={() => scrollToSection('servicios')} className="text-sm font-medium hover:text-primary transition-colors">Servicios</button>
-          <button onClick={() => scrollToSection('marcas')} className="text-sm font-medium hover:text-primary transition-colors">Marcas</button>
-          <button onClick={() => scrollToSection('proceso')} className="text-sm font-medium hover:text-primary transition-colors">Proceso</button>
+          <button onClick={() => scrollToSection('servicios')} className="text-sm font-medium hover:text-primary">Servicios</button>
+          <button onClick={() => scrollToSection('marcas')} className="text-sm font-medium hover:text-primary">Marcas</button>
+          <button onClick={() => scrollToSection('proceso')} className="text-sm font-medium hover:text-primary">Proceso</button>
           <a 
             href="https://soccatech-ecu.blogspot.com/" 
             target="_blank" 
-            rel="noreferrer" 
-            className="text-sm font-medium hover:text-primary transition-colors"
+            rel="noopener noreferrer" 
+            className="text-sm font-medium hover:text-primary"
           >
             Blog
           </a>
-          <button onClick={() => scrollToSection('contacto')} className="text-sm font-medium hover:text-primary transition-colors">Contacto</button>
+          <button onClick={() => scrollToSection('contacto')} className="text-sm font-medium hover:text-primary">Contacto</button>
         </nav>
 
         <div className="hidden md:block">
@@ -49,19 +49,11 @@ export const Header = () => {
         </button>
       </div>
 
-      {/* Menú Móvil */}
       {open && (
-        <div className="p-4 bg-background border-b md:hidden flex flex-col gap-4 animate-in fade-in slide-in-from-top-4">
-          <button onClick={() => scrollToSection('servicios')} className="text-left py-2 border-b border-border/40">Servicios</button>
-          <button onClick={() => scrollToSection('marcas')} className="text-left py-2 border-b border-border/40">Marcas</button>
-          <a 
-            href="https://soccatech-ecu.blogspot.com/" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-left py-2 border-b border-border/40 font-medium text-primary"
-          >
-            Blog Especializado
-          </a>
+        <div className="p-4 bg-background border-b md:hidden flex flex-col gap-4">
+          <button onClick={() => scrollToSection('servicios')} className="text-left py-2">Servicios</button>
+          <button onClick={() => scrollToSection('marcas')} className="text-left py-2">Marcas</button>
+          <a href="https://soccatech-ecu.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-left py-2 font-medium text-primary">Blog</a>
           <button onClick={() => scrollToSection('contacto')} className="text-left py-2">Contacto</button>
         </div>
       )}
