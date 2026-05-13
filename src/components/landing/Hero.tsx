@@ -29,13 +29,13 @@ export const Hero = () => (
 
         <div className="mt-8 flex flex-wrap gap-4">
           <Button variant="hero" size="lg" asChild>
-            <a href="#contacto">
+            <a href="#contact">
               Solicitar diagnóstico
               <ArrowRight className="ml-1 h-4 w-4" />
             </a>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <a href="#servicios">Ver servicios</a>
+            <a href="#services">Ver servicios</a>
           </Button>
         </div>
 
