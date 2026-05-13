@@ -1,9 +1,12 @@
 export const Footer = () => (
   <footer className="border-t border-border bg-card/30 py-12">
     <div className="container flex flex-col items-center justify-center gap-6">
-      {/* Nombre de la marca sin el icono genérico para que sea más elegante */}
+      {/* Nombre de la marca con colores divididos */}
       <div className="flex items-center gap-2">
-        <span className="text-lg font-bold tracking-tighter uppercase">SoccaTech</span>
+        <span className="text-base font-bold tracking-tight">
+          <span className="text-[#F97316]">Socca</span>
+          <span className="text-white">Tech</span>
+        </span>
       </div>
       
       <div className="flex flex-col items-center gap-2 text-center">
