@@ -10,7 +10,7 @@ export const Footer = () => (
         <span className="text-sm font-semibold">SoccaTech</span>
       </div>
       <p className="text-xs text-muted-foreground">
-        © {new Date().getFullYear()} SoccaTech · Electrónica Automotriz · Córdoba,Chaco
+        © {new Date().getFullYear()} SoccaTech · Electrónica Automotriz · Argentina
       </p>
     </div>
   </footer>
