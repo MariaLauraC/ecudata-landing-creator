@@ -53,5 +53,3 @@ export const Hero = () => (
     </div>
   </section>
 );
-  </section>
-);
