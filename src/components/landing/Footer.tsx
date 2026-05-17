@@ -8,6 +8,26 @@ export const Footer = () => (
           <span className="text-white">Tech</span>
         </span>
       </div>
+
+      {/* Redes Sociales Agregadas */}
+      <div className="flex items-center gap-6 my-2">
+        <a 
+          href="https://web.facebook.com/SoccaTech" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors font-medium"
+        >
+          Facebook
+        </a>
+        <a 
+          href="https://www.instagram.com/soccatech" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-sm text-muted-foreground hover:text-[#F97316] transition-colors font-medium"
+        >
+          Instagram
+        </a>
+      </div>
       
       <div className="flex flex-col items-center gap-2 text-center">
         <p className="text-xs text-muted-foreground">
